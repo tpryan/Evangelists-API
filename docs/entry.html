@@ -1,0 +1,350 @@
+
+<!-- saved from url=(0134)http://centaur.dev/CFIDE/componentutils/cfcexplorer.cfc?path=/evangelists/api/entry.cfc&method=getcfcinhtml&name=Evangelists.api.entry -->
+<html><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<title>Component entry</title>
+<style>
+body  {
+	font-family: verdana, arial, helvetica, sans-serif;
+	background-color: #FFFFFF;
+	font-size: 12px;
+	margin-top: 10px;
+	margin-left: 10px;
+}
+
+table	{
+	font-size: 11px;
+	font-family: Verdana, arial, helvetica, sans-serif;
+	width: 90%;
+}
+
+th {
+	padding: 6px;
+	font-size: 12px;
+	background-color: #cccccc;
+}
+
+td {
+	padding: 6px;
+	background-color: #eeeeee;
+	vertical-align : top;
+}
+
+code {
+	color: #000099 ;
+}
+</style>
+
+</head>
+<body style="padding-bottom : 800px;">
+
+<font size="-2">evangelists.api.entry</font><br>
+<font size="+1"><b>Component entry 
+</b></font>
+
+<br><br><br>
+<p>Remote API for dealing with conent from the Evangelist aggregator. </p><br><table>
+
+<tbody><tr><td>hierarchy:</td><td>
+	<a href="http://centaur.dev/CFIDE/componentutils/cfcexplorer.cfc?method=getcfcinhtml&name=WEB-INF.cftags.component">WEB-INF.cftags.component</a><br> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;evangelists.api.entry<br> 
+</td></tr>
+
+<tr><td>path:</td>
+	<td>/Users/terryr/Sites/centaur.dev/Evangelists/api/entry.cfc</td>
+</tr>
+
+<tr><td>serializable:</td>
+	<td>Yes
+			</td>
+</tr>
+
+
+<tr><td>properties:</td>
+
+	
+	<td></td>
+</tr>
+
+<tr><td>methods:</td>
+
+	
+	<td> 
+	<a href="#method_count">count</a>, 
+	<a href="#method_get">get</a>, 
+	<a href="#method_listAuthors">listAuthors</a>, 
+	<a href="#method_listSources">listSources</a>
+	</td>
+</tr>
+
+
+</tbody></table>
+<font size="-2">* - private method</font>
+
+<br><br><table>
+
+
+
+	
+
+	<tbody><tr><th align="left" colspan="1">
+		<a name="method_count">count</a> 
+		</th></tr>
+	<tr><td>
+
+	
+
+	<code>
+	
+		<i>remote</i>
+	
+		<i>numeric</i>
+	
+	<b>count</b>
+	
+	(
+ 	
+		<i>
+		string
+		</i>
+		source="", 
+		<i>
+		string
+		</i>
+		author="", 
+		<i>
+		any
+		</i>
+		startDate="", 
+		<i>
+		any
+		</i>
+		endDate="", 
+		<i>
+		any
+		</i>
+		q="" 
+	)
+	
+	</code>
+	<br><br>
+	
+
+	Returns a count of records matching input criteria. Useful for paging interfaces.<br><br> 
+
+	Output: <br>
+
+	
+	
+		Parameters:<br>
+		
+			&nbsp;&nbsp; <b>source:</b>
+			string, optional, source - The external source of the content. A list of posible sources is available via listSources()
+			<br>
+		
+			&nbsp;&nbsp; <b>author:</b>
+			string, optional, author - The username of the creator of the content. A list of posible sources is available via listAuthors()
+			<br>
+		
+			&nbsp;&nbsp; <b>startDate:</b>
+			any, optional, startDate - The begining of a date range to filter content. If ommitted, count will count records back to the earliest record
+			<br>
+		
+			&nbsp;&nbsp; <b>endDate:</b>
+			any, optional, endDate - The end of a date range to filter content. If ommitted, count wil count records forward to the latest record
+			<br>
+		
+			&nbsp;&nbsp; <b>q:</b>
+			any, optional, q - A search term which will be matched against the TITLE and DESCRIPTION of the content.
+			<br>
+		
+	<br>
+	</td></tr>
+
+
+
+	
+
+
+	
+
+	<tr><th align="left" colspan="1">
+		<a name="method_get">get</a> 
+		</th></tr>
+	<tr><td>
+
+	
+
+	<code>
+	
+		<i>remote</i>
+	
+		<i><a href="content.html">Evangelists.cfc.content[]</a></i>
+	
+	<b>get</b>
+	
+	(
+ 	
+		<i>
+		string
+		</i>
+		source="", 
+		<i>
+		string
+		</i>
+		author="", 
+		<i>
+		any
+		</i>
+		startDate="", 
+		<i>
+		any
+		</i>
+		endDate="", 
+		<i>
+		any
+		</i>
+		q="", 
+		<i>
+		numeric
+		</i>
+		offset="0", 
+		<i>
+		numeric
+		</i>
+		maxresults="20", 
+		<i>
+		string
+		</i>
+		orderby="id asc" 
+	)
+	
+	</code>
+	<br><br>
+	
+
+	Returns a list of records matching input criteria.<br><br> 
+
+	Output: <br>
+
+	
+	
+		Parameters:<br>
+		
+			&nbsp;&nbsp; <b>source:</b>
+			string, optional, source - The external source of the content. A list of posible sources is available via listSources()
+			<br>
+		
+			&nbsp;&nbsp; <b>author:</b>
+			string, optional, author - The username of the creator of the content. A list of posible sources is available via listAuthors()
+			<br>
+		
+			&nbsp;&nbsp; <b>startDate:</b>
+			any, optional, startDate - The begining of a date range to filter content. If ommitted, get wil retrieve records back to the earliest record
+			<br>
+		
+			&nbsp;&nbsp; <b>endDate:</b>
+			any, optional, endDate - The end of a date range to filter content. If ommitted, get wil retrieve records forward to the latest record
+			<br>
+		
+			&nbsp;&nbsp; <b>q:</b>
+			any, optional, q - A search term which will be matched against the TITLE and DESCRIPTION of the content.
+			<br>
+		
+			&nbsp;&nbsp; <b>offset:</b>
+			numeric, optional, offset - A record number to start the search from. Useful for paging.
+			<br>
+		
+			&nbsp;&nbsp; <b>maxresults:</b>
+			numeric, optional, maxresults - The count of records to retrieve at one point. Useful for paging.
+			<br>
+		
+			&nbsp;&nbsp; <b>orderby:</b>
+			string, optional, orderby - The order in which to retrieve the records.
+			<br>
+		
+	<br>
+	</td></tr>
+
+
+
+
+	
+
+	<tr><th align="left" colspan="1">
+		<a name="method_listAuthors">listAuthors</a> 
+		</th></tr>
+	<tr><td>
+
+	
+
+	<code>
+	
+		<i>remote</i>
+	
+		<i>array</i>
+	
+	<b>listAuthors</b>
+	
+	(
+ 	
+	)
+	
+	</code>
+	<br><br>
+	
+
+	Returns an array of each unique author.<br><br> 
+
+	Output: <br>
+
+	
+	
+	<br>
+	</td></tr>
+
+
+
+	
+
+
+
+
+	
+
+	<tr><th align="left" colspan="1">
+		<a name="method_listSources">listSources</a> 
+		</th></tr>
+	<tr><td>
+
+	
+
+	<code>
+	
+		<i>remote</i>
+	
+		<i>array</i>
+	
+	<b>listSources</b>
+	
+	(
+ 	
+	)
+	
+	</code>
+	<br><br>
+	
+
+	Returns an array of each unique source.<br><br> 
+
+	Output: <br>
+
+	
+	
+	<br>
+	</td></tr>
+
+
+
+</tbody></table>
+
+
+</body></html>
