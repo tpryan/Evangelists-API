@@ -2,7 +2,7 @@
 	
 	api = new Evangelists.api.entry(); 	
 	
-	results = api.get(author='terryr',q="flex");
+	results = api.count(source="blog");
 	
 	writeDump(results );
 </cfscript>	
