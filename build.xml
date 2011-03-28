@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project name="Evangelists" basedir=".">
+	
+	<property file="settings.properties"/>
+	
+	
+	<!-- ****************************  -->
+	<!-- DATABASE TASKS  -->
+	<!-- ****************************  -->
+	<target name="database.export.schema" description="Exports the schma of the local database to file">
+		<echo message="Getting MySQL database struture" />
+		<exec executable="${mysql.mysqldump.exe}" spawn="false" dir="${mysql.dir}" output="${database.dir}localexport.sql">
+			<arg line="--database ${database.schema.local}"/>
+			<arg line="--tables"/>
+			<arg line="--host ${database.host.local}"/>
+			<arg line="--user ${database.username.local}"/>
+			<arg line="--password=${database.password.local}"/>
+			<arg line="--no-create-db" />
+			<arg line="--no-data" />
+		</exec>
+	</target>
+	
+</project>	
