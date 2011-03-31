@@ -1,8 +1,17 @@
-<cfcomponent hint="Remote API for dealing with conent from the Evangelist aggregator. ">
+<cfcomponent accessors="true"  hint="Remote API for dealing with conent from the Evangelist aggregator. ">
+	
+	<cfproperty name="maxRows">
+	<cfproperty name="offset">
+	<cfproperty name="orderby">
+	
 	<cfscript>
+		
+		
 
 	public function init(){    
-    		    
+    	variables.maxRows = 20;
+    	variables.orderby = "published asc";
+    	variables.offset = 0;		    
    		return This;    
     }
 
