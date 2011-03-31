@@ -23,4 +23,12 @@ component{
 		application.contentService = new Evangelists.services.contentService();
 		return true;
 	}
+	
+	public boolean function onMissingTemplate(){
+		writeDump(url);
+		writeDump(request);
+		writeDump(cgi);
+	
+		return true;
+	}	
 }

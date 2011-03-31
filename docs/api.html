@@ -1,0 +1,31 @@
+<h1>Evangelist API Docs</h1>
+<h2>Getting Started</h2>
+<p>To use the API start with the base url:</p>
+<p>http://yourdomain.com/evangelists/api/index.cfm/ </p>
+<p>Then append modifiers to it</p>
+<p>First comes what you are looking for, or the method: </p>
+<p>get|count|listAuthors|listSources</p>
+<p>From there you add modifiers to filter your search:</p>
+
+
+<table>
+	<tr><th>Modifier</th><th>format</th><th>Default</th></tr>
+	<tr><td>author</td><td>a comma delimited list of authors</td><td>all</td></tr>
+    <tr><td>source</td><td>a comma delimited list of sources</td><td>all</td></tr>
+    <tr><td>daterange</td><td>a range of dates in the format yyyymmdd-yyyymmdd</td><td>all</td></tr>
+    <tr><td>format</td><td>xml or json</td><td>xml</td></tr>
+    <tr><td>offset and maxresults</td><td>Numbers in the format offset|maxresults</td><td>0|20</td></tr>
+    <tr><td>q</td><td>a search term in Quotes</td><td>None</td></tr>
+</table>
+<h2>Examples</h2>
+<p><strong>Get all records for terryr in json format</strong></p>
+<p>http://yourdomain.com/evangelists/api/index.cfm/get/terryr/json</p>
+<p><strong>Get a count of all records from vimeo for March 2011in xml</strong></p>
+<p>http://yourdomain.com/evangelists/api/index.cfm/get/vimeo/20110301-20110401</p>
+<p><strong>Get a list of all records since the end of March</strong></p>
+<p>http://yourdomain.com/evangelists/api/index.cfm/get/vimeo/20110331-</p>
+<p>Get a list of 5 r<strong>ecords for ptrani and rstewart from vimeo and youtube before march 2011 in json</strong></p>
+<p>http://yourdomain.com/evangelists/api/index.cfm/get/rstewart,ptrani/vimeo,youtube/-20110301/0|5/json</p>
+<p><strong>Get a list of 5 records for ptrani and rstewart from vimeo and youtube before march 2011 in json that are about &quot;blackberry&quot;</strong></p>
+<p>http://yourdomain.com/evangelists/api/index.cfm/get/rstewart,ptrani/vimeo,youtube/-20110301/0|5/&quot;blackberry&quot;/json</p>
+<p>&nbsp;</p>
