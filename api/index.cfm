@@ -63,24 +63,24 @@
 	
 	param name="url.orderby" type="string" default="#entryService.getorderby()#";
 	
-	if (url.method == "get"){	
+	if (CompareNoCase(url.method,"get") eq 0){	
 		results = entryService.get(url.source,url.author,url.startDate,url.endDate,url.q,url.offset,url.maxresults,url.orderby);
 		returnContent = formatter.formatEntriesAsXML(results);
 	}
-	else if(url.method == "count"){
+	else if(CompareNoCase(url.method,"count") eq 0){
 		results = entryService.count(url.source,url.author,url.startDate,url.endDate,url.q);
 		returnContent = formatter.formatCountAsXML(results);
 	}
-	else if(url.method == "listAuthors"){
+	else if(CompareNoCase(url.method,"listAuthors") eq 0){
 		results = entryService.listAuthors();
 		returnContent = formatter.formatAuthorsAsXML(results);
 	}
-	else if(url.method == "listSources"){
+	else if(CompareNoCase(url.method, "listSources") eq 0){
 		results = entryService.listSources();
 		returnContent = formatter.formatSourcesAsXML(results);
 	}	
 
-	if (url.format == "json"){
+	if (CompareNoCase(url.format, "json") eq 0){
 		returnContent = serializeJSON(results);
 	}
 	

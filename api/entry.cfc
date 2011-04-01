@@ -10,7 +10,7 @@
 
 	public function init(){    
     	variables.maxRows = 20;
-    	variables.orderby = "published asc";
+    	variables.orderby = "published desc";
     	variables.offset = 0;		    
    		return This;    
     }
